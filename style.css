@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    max-height: 100vh;
+    margin: 0;
+    background-color: #FFFDFE;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    /* grid-gap: 1.5rem; */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* .container > div{
+    background-color: #ddd;
+} */
+
+.box1{
+    grid-column: 1/span 3;
+    padding: 40px 20%;
+   
+}
+
+.box2{
+    grid-column: span 3;
+    grid-row: 2/ span 4;
+    padding: 5% 20%;
+}
+
+.box3{
+    grid-column: 4/ span 2;
+    grid-row: span 5;
+    background-image: url("images/hero-desktop.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.form{
+    position: relative;
+    /* border: 1px solid cornflowerblue; */
+}
+
+.form > h1{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.9rem;
+    color: hsl(0, 36%, 70%);
+    font-weight: 300;
+    font-size: 3.5rem;
+}
+
+.form :nth-child(2){
+    color: #000;
+    font-weight: 600;
+}
+
+.form small{
+    font-size: 1rem;
+    margin: 40px 0;
+    display: block;
+    color: hsl(0, 36%, 70%);
+}
+
+.form input{
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid  hsl(0, 36%, 70%);
+    padding-left: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+}
+
+.form input::placeholder{
+    color: hsl(0, 36%, 70%);
+}
+
+.form input:focus{
+    outline: none;
+    color: hsl(0, 36%, 70%);
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.form .error-icon{
+    position: absolute;
+    bottom: 9px;
+    left: 230px;
+    visibility: hidden;
+}
+
+.form.error .error-icon{
+    visibility: visible;
+}
+
+.form button{
+    width: 80px;
+    height: 41px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 270px;
+    border: 1px none;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 2px 10px 9px hsla(0, 74%, 74%, 0.3);
+}
+
+.form button:focus{
+    outline: none;
+}
+
+.form button:hover{
+    background:  hsl(0, 80%, 86%);
+}
+
+.form #small{
+    color: hsl(0, 93%, 68%);
+    display: block;
+    margin:5px;
+    position: absolute;
+    left: 10px;
+    visibility: hidden;
+}
+
+.form.error #small{
+    visibility: visible;
+}
+
+.box3{
+    grid-column: 4/ span 2;
+    grid-row: span 5;
+}
+
+@media screen and (max-width: 600px){
+
+    .container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+    .box1{
+        grid-column: span 3;
+        padding: 40px 20%;
+    }
+    
+    .box2{
+        grid-column: span 3;
+        grid-row: 5/ span 6;
+        padding: 5% 20%;
+    }
+    .box3{
+        grid-column: span 3;
+        grid-row: 2/span 3;
+    }
+    .form > h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .form small{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 411px){
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+    .box1{
+        grid-column: span 2;
+        padding: 20px 40px;
+    }
+    
+    .box2{
+        grid-column: span 2;
+        grid-row: 5/ span 6;
+        padding: 0;
+    }
+    .box3{
+        grid-column: span 2;
+        grid-row: 2/span 3;
+        background-size: cover;
+        background-position: top;
+    }
+    .form > h1{
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+        margin-top: 50px;
+    }
+    .form > h1:nth-child(2){
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    .form small{
+        margin-top: 0;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .form input{
+        width: 80%
+    }
+    .form button{
+        bottom: 19px;
+        left: 280px;
+    }
+}
